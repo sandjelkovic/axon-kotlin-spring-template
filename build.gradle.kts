@@ -19,6 +19,7 @@ val mockkVersion: String by extra { "1.10.0" }
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter")
+	implementation("io.projectreactor:reactor-core")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
@@ -28,7 +29,6 @@ dependencies {
 	}
 	testImplementation("org.axonframework:axon-test:$axonVersion")
 	testImplementation("io.mockk:mockk:$mockkVersion")
-
 }
 
 tasks.withType<Test> {
