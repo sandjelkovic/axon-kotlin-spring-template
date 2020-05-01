@@ -5,11 +5,15 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        java: [ 8, 11 ]
+    name: Template on ${{ matrix.java }} JDK
     steps:
-      - uses: actions/checkout@v1
-      - name: Set up JDK 1.8
+      - uses: actions/checkout@v2
+      - name: Set up JDK
         uses: actions/setup-java@v1
         with:
-          java-version: 1.8
+          java-version: ${{ matrix.java }}
       - name: Build with Gradle
-        run: ./gradlew clean build $someParameter
+        run: ./gradlew clean build
