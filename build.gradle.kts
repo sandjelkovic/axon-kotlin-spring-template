@@ -3,8 +3,8 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
 	id("org.springframework.boot") version "2.3.4.RELEASE"
 	id("io.spring.dependency-management") version "1.0.10.RELEASE"
-	kotlin("jvm") version "1.4.10"
-	kotlin("plugin.spring") version "1.4.10"
+	kotlin("jvm") version "1.4.20"
+	kotlin("plugin.spring") version "1.4.20"
 }
 
 group = "com.sandjelkovic.axon"
@@ -14,7 +14,7 @@ java.sourceCompatibility = JavaVersion.VERSION_1_8
 repositories {
 	mavenCentral()
 }
-val axonVersion: String by extra { "4.4.3" }
+val axonVersion: String by extra { "4.4.5" }
 val mockkVersion: String by extra { "1.10.0" }
 
 dependencies {
